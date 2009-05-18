@@ -1,0 +1,6 @@
+; $Id: simpletest_clone.info 764 2009-05-04 22:48:30Z jhedstrom $
+name = SimpleTest Clone
+description = "Write SimpleTests against an existing Drupal configuration."
+package ="Development"
+core = 6.x
+dependencies[] = simpletest
