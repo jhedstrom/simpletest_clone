@@ -137,7 +137,7 @@ class SimpleTestCloneTestCase extends DrupalWebTestCase {
       if ($name == 'users') {
         // UID = 0 confuses mysql. Special handling here, taken from system.install
         db_query("INSERT INTO %s (uid, name, pass, mail, mode, sort, threshold, theme, signature, created, access, login, status, timezone, language, picture, init, data)
-        SELECT uid + 1, name, pass, mail, mode, sort, threshold, theme, signature, created, access, login, status, timezone, language, picture, init, data FROM %s", $target, $source);
+        SELECT uid + 1, name, pass, mail, mode, sort, threshold, theme, signature, created, access, login, status, timezone, language, picture, init, data FROM %s ORDER BY uid", $target, $source);
         // Update uid
         db_query("UPDATE %s SET uid = uid - 1", $target);
       }
